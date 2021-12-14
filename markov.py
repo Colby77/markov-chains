@@ -46,7 +46,6 @@ def make_chains(text_string):
 
     for n in range(len(text_string) - 1):
         tup = (text_string[n], text_string[n + 1])
-        # print(f'{tup}')
         try:
             if tup in chains:
                 chains[tup].append(text_string[n + 2])
@@ -55,7 +54,7 @@ def make_chains(text_string):
                 chains[tup].append(text_string[n + 2])
 
         except IndexError:
-            chains[tup] = tup
+            chains[tup] = text_string[n]
 
     return chains
 
@@ -64,15 +63,12 @@ def make_chains(text_string):
 def make_text(chains):
     """Return text from chains."""
     words = []
-    print(chains)
     link = choice(list(chains.keys()))
     pick = choice(list(chains[link]))
-    print('')
-    print(link, pick)
     for n in link:
         words.append(n)
     words.append(pick)
-    print(words)
+    
     while True:
 
         try:
