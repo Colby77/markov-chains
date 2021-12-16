@@ -83,6 +83,8 @@ def make_text(chains):
 
 
 input_path = 'green-eggs.txt'
+# input_path = 'gettysburg.txt'
+# input_path = 'opis_mutiny.txt'
 
 # Open the file and turn it into one long string
 input_text = open_and_read_file(input_path)
